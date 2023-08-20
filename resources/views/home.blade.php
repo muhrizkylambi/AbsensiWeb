@@ -61,3 +61,9 @@
   <!-- /.col -->
 </div>
 @endsection
+
+@push('scripts')
+    <script>
+        const currentRoute = "{{ $currentRoute }}";
+    </script>
+@endpush

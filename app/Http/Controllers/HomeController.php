@@ -11,8 +11,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $currentRoute = \Request::route()->getName();
+
         return view('home', [
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'breadcrumb' => 'Dashboard',
+            'currentRoute' => $currentRoute
         ]);
     }
 
