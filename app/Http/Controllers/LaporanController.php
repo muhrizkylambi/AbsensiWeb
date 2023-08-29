@@ -24,6 +24,7 @@ class LaporanController extends Controller
         return view('data-laporan.laporan-aktivitas', [
             'title' => 'Data Laporan Aktivitas',
             'breadcrumb' => 'Data Laporan Aktivitas',
+            'pegawai' => Pegawai::all(),
             'currentRoute' => $currentRoute
         ]);
     }
