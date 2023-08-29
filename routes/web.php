@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\BidangController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\LaporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::get('/', [HomeController::class, 'index']);
 Route::resource('jabatan', JabatanController::class);
 Route::resource('bidang', BidangController::class);
 Route::resource('pegawai', PegawaiController::class);
+Route::get('/laporan-absensi', [LaporanController::class, 'laporanAbsensi'])->name('laporan-absensi');
+Route::get('/laporan-aktivitas', [LaporanController::class, 'laporanAktivitas'])->name('laporan-aktivitas');

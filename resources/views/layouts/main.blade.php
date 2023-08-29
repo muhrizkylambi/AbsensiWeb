@@ -112,8 +112,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="/" class="nav-link {{ $currentRoute === 'home' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -122,8 +121,10 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item {{ $currentRoute === 'jabatan.index' || $currentRoute === 'bidang.index' || $currentRoute === 'pegawai.index' ? 'menu-open' : '' }}">
-                            <a href="#" class="nav-link {{ $currentRoute === 'jabatan.index' || $currentRoute === 'bidang.index' || $currentRoute === 'pegawai.index' ? 'active' : '' }}">
+                        <li
+                            class="nav-item {{ $currentRoute === 'jabatan.index' || $currentRoute === 'bidang.index' || $currentRoute === 'pegawai.index' ? 'menu-open' : '' }}">
+                            <a href="#"
+                                class="nav-link {{ $currentRoute === 'jabatan.index' || $currentRoute === 'bidang.index' || $currentRoute === 'pegawai.index' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Master Pegawai
@@ -131,21 +132,23 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li
-                                    class="nav-item">
-                                    <a href="{{ route('bidang.index') }}" class="nav-link {{ $currentRoute === 'bidang.index' ? 'active' : '' }}">
+                                <li class="nav-item">
+                                    <a href="{{ route('bidang.index') }}"
+                                        class="nav-link {{ $currentRoute === 'bidang.index' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Bidang Pegawai</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('jabatan.index') }}" class="nav-link {{ $currentRoute === 'jabatan.index' ? 'active' : '' }}">
+                                    <a href="{{ route('jabatan.index') }}"
+                                        class="nav-link {{ $currentRoute === 'jabatan.index' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Jabatan Pegawai</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('pegawai.index') }}" class="nav-link {{ $currentRoute === 'pegawai.index' ? 'active' : '' }}">
+                                    <a href="{{ route('pegawai.index') }}"
+                                        class="nav-link {{ $currentRoute === 'pegawai.index' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Pegawai</p>
                                     </a>
@@ -154,8 +157,10 @@
                             </ul>
                         </li>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li
+                            class="nav-item {{ $currentRoute === 'laporan-absensi' || $currentRoute === 'laporan-aktivitas' ? 'menu-open' : '' }}">
+                            <a href="#"
+                                class="nav-link {{ $currentRoute === 'laporan-absensi' || $currentRoute === 'laporan-aktivitas' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Kelola Absensi
@@ -164,7 +169,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="{{ route('laporan-absensi') }}"
+                                        class="nav-link {{ $currentRoute === 'laporan-absensi' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Laporan Absensi</p>
                                     </a>
@@ -182,9 +188,10 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/uplot.html" class="nav-link">
+                                    <a href="{{ route('laporan-aktivitas') }}"
+                                        class="nav-link {{ $currentRoute === 'laporan-aktivitas' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Pengajuan Aktifitas</p>
+                                        <p>Laporan Aktivitas</p>
                                     </a>
                                 </li>
                             </ul>
@@ -316,15 +323,15 @@
     <!-- ChartJS -->
     <script src="plugins/chart.js/Chart.min.js"></script>
     <!-- My Script -->
-    <script src="{{ url('dist/js/script.js')}}"></script>
+    <script src="{{ url('dist/js/script.js') }}"></script>
 
-    {{-- My Custom Plugin--}}
+    {{-- My Custom Plugin --}}
     <script>
         $(function() {
-          // DataTables
-          $("#tableBidang").DataTable();
-          $("#tableJabatan").DataTable();
-          $("#tablePegawai").DataTable();
+            // DataTables
+            $("#tableBidang").DataTable();
+            $("#tableJabatan").DataTable();
+            $("#tablePegawai").DataTable();
 
             // Hapus Data Bidang
             $(document).on('click', '.hapus-bidang', function(e) {
@@ -365,7 +372,7 @@
                     }
                 })
             });
-            
+
             // Hapus Data Pegawai
             $(document).on('click', '.hapus-pegawai', function(e) {
                 var form = $(this).closest("form");

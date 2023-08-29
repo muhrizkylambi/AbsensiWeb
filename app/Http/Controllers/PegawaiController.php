@@ -21,9 +21,9 @@ class PegawaiController extends Controller
         return view('pegawai.index', [
             'title' => 'Data Pegawai',
             'breadcrumb' => 'Data Pegawai',
-            'pegawai'=> Pegawai::all(),
+            'pegawai' => Pegawai::all(),
             'currentRoute' => $currentRoute
-          ]);
+        ]);
     }
 
     /**
@@ -33,10 +33,10 @@ class PegawaiController extends Controller
     {
         $currentRoute = \Request::route()->getName();
 
-        return view('pegawai.create',[
+        return view('pegawai.create', [
             'title' => 'Tambah Data Pegawai',
-            'bidang'=> Bidang::all(),
-            'jabatan'=> Jabatan::all(),
+            'bidang' => Bidang::all(),
+            'jabatan' => Jabatan::all(),
             'breadcrumb' => 'Tambah Data Pegawai',
             'currentRoute' => $currentRoute
         ]);
@@ -51,7 +51,7 @@ class PegawaiController extends Controller
             $images = $request->file('image');
             $extention = $images->getClientOriginalExtension();
             $imageName = time() . '.' . $extention;
-            $images->move(public_path('images/pegawai/'), $imageName); 
+            $images->move(public_path('images/pegawai/'), $imageName);
         }
 
         Pegawai::create([
@@ -64,9 +64,9 @@ class PegawaiController extends Controller
             'password' => Hash::make($request->password),
             'alamat' => $request->alamat,
             'image' => $imageName
-          ]);
-      
-          return redirect()->route('pegawai.index')->with('status', 'Data Berhasil Ditambahkan!');
+        ]);
+
+        return redirect()->route('pegawai.index')->with('status', 'Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -83,13 +83,13 @@ class PegawaiController extends Controller
     public function edit(Pegawai $pegawai)
     {
         $currentRoute = \Request::route()->getName();
-        
+
         return view('pegawai.edit', [
             'title' => 'Edit Data Pegawai',
             'breadcrumb' => 'Edit Data Pegawai',
-            'bidangs'=> Bidang::all(),
-            'jabatans'=> Jabatan::all(),
-            'pegawai'=> Pegawai::find($pegawai->id),
+            'bidangs' => Bidang::all(),
+            'jabatans' => Jabatan::all(),
+            'pegawai' => Pegawai::find($pegawai->id),
             'currentRoute' => $currentRoute
         ]);
     }
@@ -107,7 +107,7 @@ class PegawaiController extends Controller
      */
     public function destroy(Pegawai $pegawai)
     {
-        Pegawai::where('id',$pegawai->id)->delete();
+        Pegawai::where('id', $pegawai->id)->delete();
         return redirect()->route('pegawai.index')->with('status', 'Data Berhasil Dihapus!');
     }
 }
